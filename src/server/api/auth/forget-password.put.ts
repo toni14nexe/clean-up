@@ -1,0 +1,57 @@
+import { defineEventHandler } from 'h3'
+import crypto from 'crypto'
+import nodemailer from 'nodemailer'
+import { prisma } from '~/server/utils/prisma'
+
+export default defineEventHandler(async event => {
+  const body = await readBody(event)
+
+  const user = await prisma.user.findUnique({
+    where: { email: body.email }
+  })
+
+  if (!user)
+    throw createError({
+      statusCode: 404,
+      message: 'Invalid forget password email'
+    })
+
+  const forgetPassHash = crypto.randomBytes(32).toString('hex')
+
+  await prisma.user.update({
+    where: { email: body.email },
+    data: {
+      forgetPassHash
+    }
+  })
+
+  // Reset password email
+
+  const url = process.env.APP_BASE_URL
+  const transporter = nodemailer.createTransport({
+    service:
+      process.env.APP_EMAIL_HOST === 'smtp.zoho.eu' ? undefined : 'gmail',
+    host: process.env.APP_EMAIL_HOST,
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.APP_EMAIL,
+      pass: process.env.APP_EMAIL_PASSWORD
+    }
+  })
+
+  const verificationUrl = `${process.env.APP_BASE_URL}/reset-password?token=${forgetPassHash}`
+  const mailOptions = {
+    from: `"Horizon Escape" <${process.env.APP_EMAIL}>`,
+    to: body.email,
+    subject: 'Promijenite svoju lozinku',
+    html: `
+           <a href="${url}" style="text-decoration: none"><h1 style="background-color: #d9d950; color: white; width: fit-content; padding: 0 15px 0 14px; border-radius: 4px">Horizon Escape</h1></a>
+           <p>Bok ${user.firstname} ${user.lastname},</p>
+           <p>Zatražili ste promijenu lozinke. Molimo vas pristupite promijeni lozinke otvaranjem linka:</p>
+           <a href="${verificationUrl}">Promijenite lozinku</a>`
+  }
+  await transporter.sendMail(mailOptions)
+
+  return { message: 'Forget password request successfully performed' }
+})

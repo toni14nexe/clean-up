@@ -1,0 +1,6 @@
+.el-select__selected-item {
+  font-size: 18px;
+}
+.el-select-dropdown__item {
+  font-size: 18px !important;
+}
