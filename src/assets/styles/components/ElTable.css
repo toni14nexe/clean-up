@@ -1,0 +1,20 @@
+.el-table {
+  z-index: 0 !important;
+}
+
+div.el-table__inner-wrapper::before {
+  display: none;
+}
+
+.description-table th,
+td {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 450px) {
+  .description-table th,
+  td {
+    font-size: 16px;
+  }
+}

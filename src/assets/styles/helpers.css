@@ -1,0 +1,188 @@
+.color-primary {
+  color: var(--el-color-primary) !important;
+}
+
+.color-danger {
+  color: var(--el-color-danger);
+}
+
+.color-success {
+  color: var(--el-color-success);
+}
+
+.color-zinc {
+  color: var(--el-text-color-secondary);
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursor-normal {
+  cursor: context-menu !important;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.mt-6 {
+  margin-top: 6px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mr-4 {
+  margin-right: 4px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+
+.mr-24 {
+  margin-right: 24px;
+}
+
+.mr-77 {
+  margin-right: 77px;
+}
+
+.ml-4 {
+  margin-left: 4px;
+}
+
+.ml-8 {
+  margin-left: 8px;
+}
+
+.ml-12 {
+  margin-left: 12px;
+}
+
+.ml-16 {
+  margin-left: 16px;
+}
+
+.ml-24 {
+  margin-left: 24px;
+}
+
+.mx-6 {
+  margin-inline: 6px;
+}
+
+.mx-24 {
+  margin-inline: 24px;
+}
+
+.pr-77 {
+  padding-right: 77px;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.row-gap-12 {
+  row-gap: 12px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.max-w-250 {
+  max-width: 250px;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.link-fix {
+  color: black;
+  text-decoration: none !important;
+}
+.link-fix:hover {
+  text-decoration: underline !important;
+  color: var(--el-color-primary);
+}
+
+.page-container {
+  width: 100%;
+}
+
+/* STATISTICS SKELETON */
+
+.statistics-skeleton-card {
+  height: 91px;
+}
+
+/* PAGINATION */
+
+.pagination-responsivity {
+  margin-top: 16px;
+  margin-left: -45px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .pagination-responsivity {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+  }
+}
