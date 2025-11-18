@@ -1,5 +1,5 @@
 {
-  "name": "Horizon Escape",
+  "name": "Agencija za Čišćenje Horizon",
   "short_name": "HEscape",
   "icons": [
     {
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#D2D21D",
+  "theme_color": "#409eff",
   "background_color": "#ffffff",
   "display": "standalone"
 }

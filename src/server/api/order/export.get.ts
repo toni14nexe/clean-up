@@ -42,12 +42,13 @@ export default defineEventHandler(async event => {
         <Kupac>${escapeXml(order.buyerFullname)}</Kupac>
         <Adresa>${escapeXml(order.buyerAddress)}</Adresa>
         <Mjesto>${escapeXml(order.buyerPlace)}</Mjesto>
-        <Postanski>${escapeXml(order.buyerZipCode)}</Postanski>
-        <Drzava>${escapeXml(order.buyerCountry)}</Drzava>
         <Email>${escapeXml(order.buyerEmail)}</Email>
         <Tel>${escapeXml(order.buyerNumber ?? '')}</Tel>
+        <Objekt>${escapeXml(order.objectType ?? '')}</Objekt>
+        <DatumIVrijeme>${escapeXml(order.datetime ? formatToDatetime(String(order.datetime)) : '')}</DatumIVrijeme>
+        <BrojDjelatnika>${escapeXml(order.persons ?? '')}</BrojDjelatnika>
+        <Dodatno>${escapeXml(order.additional ?? '')}</Dodatno>
         <Placanje>${escapeXml(order.payment)}</Placanje>
-        <Dostava>${escapeXml(order.shipping)}</Dostava>
         <Ukupno>${escapeXml(order.totalPrice)}</Ukupno>
         <Opis>${escapeXml(order.description ?? '')}</Opis>
         <Vrijeme>${escapeXml(order.createdAt.toISOString())}</Vrijeme>
@@ -65,12 +66,13 @@ export default defineEventHandler(async event => {
         <Kupac>${escapeXml(order.buyerFullname)}</Kupac>
         <Adresa>${escapeXml(order.buyerAddress)}</Adresa>
         <Mjesto>${escapeXml(order.buyerPlace)}</Mjesto>
-        <Postanski>${escapeXml(order.buyerZipCode)}</Postanski>
-        <Drzava>${escapeXml(order.buyerCountry)}</Drzava>
         <Email>${escapeXml(order.buyerEmail)}</Email>
         <Tel>${escapeXml(order.buyerNumber ?? '')}</Tel>
+        <Objekt>${escapeXml(order.objectType ?? '')}</Objekt>
+        <DatumIVrijeme>${escapeXml(order.datetime ? formatToDatetime(String(order.datetime)) : '')}</DatumIVrijeme>
+        <BrojDjelatnika>${escapeXml(order.persons ?? '')}</BrojDjelatnika>
+        <Dodatno>${escapeXml(order.additional ?? '')}</Dodatno>
         <Placanje>${escapeXml(order.payment)}</Placanje>
-        <Dostava>${escapeXml(order.shipping)}</Dostava>
         <Ukupno>${escapeXml(order.totalPrice)}</Ukupno>
         <Opis>${escapeXml(order.description ?? '')}</Opis>
         <Vrijeme>${escapeXml(order.createdAt.toISOString())}</Vrijeme>

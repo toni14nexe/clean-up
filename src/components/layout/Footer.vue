@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import FacebookIcon from '~/assets/icons/facebook.vue'
 import InstagramIcon from '~/assets/icons/instagram.vue'
-import TikTokIcon from '~/assets/icons/tiktok.vue'
 import MessageIcon from '~/assets/icons/message.vue'
 import FooterMenuCard from '~/components/layout/FooterMenuCard.vue'
+import LogoIcon from '~/assets/icons/logo.vue'
 
 defineProps(['dividerMarginTop'])
 
@@ -11,7 +11,7 @@ const categoriesStore = useCategoriesStore()
 const { categoriesLoading, webshopCategories } = storeToRefs(categoriesStore)
 const mainCategories = ref([
   { id: 1, name: 'Naslovnica', url: '' },
-  { id: 2, name: 'Trgovina', url: 'webshop' },
+  { id: 2, name: 'Usluge', url: 'webshop' },
   { id: 3, name: 'O nama', url: 'o-nama' },
   { id: 5, name: 'Kontakt', url: 'kontakt' }
 ])
@@ -28,7 +28,7 @@ const mainCategories = ref([
 
     <FooterMenuCard
       :categories="webshopCategories"
-      title="Trgovina"
+      title="Usluge"
       urlPrefix="/webshop/"
       :loading="categoriesLoading"
     />
@@ -44,7 +44,7 @@ const mainCategories = ref([
         </ElIcon>
       </NuxtLink>
       <NuxtLink
-        to="TODO"
+        to="https://web.facebook.com/profile.php?id=100076552197691"
         class="icon-link"
         style="margin-left: 2px"
         target="_blank"
@@ -53,14 +53,13 @@ const mainCategories = ref([
           <FacebookIcon />
         </ElIcon>
       </NuxtLink>
-      <NuxtLink to="TODO" class="icon-link ml-4" target="_blank">
+      <NuxtLink
+        to="https://www.instagram.com/agencijazaciscenjezadarhorizon/#"
+        class="icon-link ml-4"
+        target="_blank"
+      >
         <ElIcon :size="40">
           <InstagramIcon />
-        </ElIcon>
-      </NuxtLink>
-      <NuxtLink to="TODO" class="icon-link ml-4" target="_blank">
-        <ElIcon :size="40">
-          <TikTokIcon />
         </ElIcon>
       </NuxtLink>
     </ElRow>
@@ -78,9 +77,19 @@ const mainCategories = ref([
           >info@horizon-escape.hr</a
         ></ElCol
       >
-      <ElCol align="middle" class="small-text">Banka: TODO</ElCol>
-      <ElCol align="middle" class="small-text">TODO</ElCol>
-      <ElCol align="middle" class="small-text">IBAN: TODO</ElCol>
+      <ElCol align="middle" class="small-text"
+        >Banka: Privredna Banka Zagreb</ElCol
+      >
+      <ElCol align="middle" class="small-text">SWIFT/BIC: PBZGHR2X</ElCol>
+      <ElCol align="middle" class="small-text"
+        >IBAN: HR9523400091111344203</ElCol
+      >
+    </ElRow>
+
+    <ElRow justify="center">
+      <ElIcon :size="120">
+        <LogoIcon />
+      </ElIcon>
     </ElRow>
 
     <ElRow

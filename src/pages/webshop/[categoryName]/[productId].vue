@@ -29,7 +29,7 @@ if (product.value) {
 
   const image =
     (product.value.images?.[0] as string) ||
-    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
   const url = `${baseUrl}${route.fullPath}`
 
   useHead({

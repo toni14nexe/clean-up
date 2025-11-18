@@ -2,7 +2,6 @@
 import type { FormInstance, FormRules } from 'element-plus'
 import FacebookIcon from '~/assets/icons/facebook.vue'
 import InstagramIcon from '~/assets/icons/instagram.vue'
-import TikTokIcon from '~/assets/icons/tiktok.vue'
 import ContactImage from '@/assets/images/contact.jpg'
 
 interface RuleForm {
@@ -70,7 +69,7 @@ async function sendMessage(formEl: FormInstance | undefined) {
 <template>
   <div class="page-container mb-24">
     <ElRow align="middle" justify="center">
-      <h1 class="color-primary">KONTAKTIRAJTE NAS</h1>
+      <h3 class="color-primary">KONTAKTIRAJTE NAS</h3>
     </ElRow>
 
     <ElRow justify="center">
@@ -111,37 +110,6 @@ async function sendMessage(formEl: FormInstance | undefined) {
         Kontaktirajte nas putem obrasca ispod ili na našu email adresu:
         <a href="mailto:info@horizon-escape.hr"> info@horizon-escape.hr </a>
       </p>
-    </ElRow>
-    <ElRow>
-      <ElCol class="small-text">Horizon Escape d.o.o.</ElCol>
-      <ElCol class="small-text">Stara cesta 3, 23241 Poličnik</ElCol>
-      <ElCol class="small-text">OIB: 45285939281</ElCol>
-      <ElCol class="small-text">Telefon: info@horizon-escape.hr</ElCol>
-      <ElCol class="small-text">Banka: TODO</ElCol>
-      <ElCol class="small-text">SWIFT/BIC: TODO</ElCol>
-      <ElCol class="small-text">IBAN: TODO</ElCol>
-    </ElRow>
-
-    <ElRow justify="center" align="middle" class="w-100 mt-16">
-      <NuxtLink to="TODO" class="icon-link ml-4" target="_blank">
-        <ElIcon :size="40">
-          <FacebookIcon />
-        </ElIcon>
-      </NuxtLink>
-      <NuxtLink to="TODO" class="icon-link ml-4" target="_blank">
-        <ElIcon :size="40">
-          <InstagramIcon />
-        </ElIcon>
-      </NuxtLink>
-      <NuxtLink to="TODO" class="icon-link ml-4" target="_blank">
-        <ElIcon :size="40">
-          <TikTokIcon />
-        </ElIcon>
-      </NuxtLink>
-    </ElRow>
-
-    <ElRow align="middle" justify="center">
-      <h1 class="color-primary">Poruka</h1>
     </ElRow>
 
     <ElRow justify="center">
@@ -195,6 +163,29 @@ async function sendMessage(formEl: FormInstance | undefined) {
         </ElRow>
       </ElForm>
     </ElRow>
+
+    <ElRow>
+      <ElCol class="small-text">Agencija za Čišćenje Horizon d.o.o.</ElCol>
+      <ElCol class="small-text">Stara cesta 3, 23241 Poličnik</ElCol>
+      <ElCol class="small-text">OIB: 45285939281</ElCol>
+      <ElCol class="small-text">Telefon: info@horizon-escape.hr</ElCol>
+      <ElCol class="small-text">Banka: Privredna Banka Zagreb</ElCol>
+      <ElCol class="small-text">SWIFT/BIC: PBZGHR2X</ElCol>
+      <ElCol class="small-text">IBAN: HR9523400091111344203</ElCol>
+    </ElRow>
+
+    <ElRow justify="center" align="middle" class="mt-24">
+      <div class="map-wrapper">
+        <iframe
+          width="100%"
+          height="350"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2865.092901149903!2d15.350661015515641!3d44.17121097910751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4761ff0d5e6afbd5%3A0x44c5981b2f0d1b3e!2sStara%20cesta%203%2C%2023241%20Poli%C4%8Dnik!5e0!3m2!1shr!2shr!4v1738948800000"
+        ></iframe>
+      </div>
+    </ElRow>
   </div>
 </template>
 
@@ -212,6 +203,14 @@ span {
   color: #737373;
   font-size: 14px;
   font-weight: 500;
+}
+.map-wrapper {
+  width: 100%;
+  max-width: 800px;
+}
+iframe {
+  border: 0;
+  border-radius: 8px;
 }
 .icon-link {
   color: var(--el-text-color-secondary);

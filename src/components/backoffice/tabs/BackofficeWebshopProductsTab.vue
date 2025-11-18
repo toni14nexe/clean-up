@@ -404,7 +404,7 @@ async function cloudinaryUpload(file: File, resourceType: 'image' | 'video') {
     <ElRow justify="space-between" align="middle" class="w-100">
       <ElCol :span="6" />
       <ElCol :span="12" align="center">
-        <h3 class="color-primary">Webshop proizvodi</h3>
+        <h3 class="color-primary">Webshop usluge</h3>
       </ElCol>
       <ElCol :span="6" align="end">
         <ElButton type="primary" plain @click="openDialog('create')">
@@ -418,7 +418,7 @@ async function cloudinaryUpload(file: File, resourceType: 'image' | 'video') {
 
     <ElRow justify="center" align="middle" class="w-100">
       <ElCol :span="8" :offset="8" align="center">
-        <span class="color-primary"><b>Aktivni proizvodi</b></span>
+        <span class="color-primary"><b>Aktivne usluge</b></span>
       </ElCol>
       <ElCol :span="8" align="end">
         <ElInput
@@ -439,6 +439,9 @@ async function cloudinaryUpload(file: File, resourceType: 'image' | 'video') {
     >
       <ElTableColumn label="Naziv" prop="name" />
       <ElTableColumn label="Kategorija" prop="productCategory.name" />
+      <ElTableColumn label="€ / h" prop="price">
+        <template #default="items"> {{ items.row.price }} € </template>
+      </ElTableColumn>
       <ElTableColumn label="Akcije" align="center" width="148">
         <template #default="items">
           <ElButton type="primary" plain @click="openDialog('edit', items.row)">
@@ -469,7 +472,7 @@ async function cloudinaryUpload(file: File, resourceType: 'image' | 'video') {
 
     <ElRow justify="center" align="middle" class="w-100">
       <ElCol :span="8" :offset="8" align="center">
-        <span class="color-primary"><b>Obrisani proizvodi</b></span>
+        <span class="color-primary"><b>Obrisane usluge</b></span>
       </ElCol>
       <ElCol :span="8" align="end">
         <ElInput
@@ -490,7 +493,9 @@ async function cloudinaryUpload(file: File, resourceType: 'image' | 'video') {
     >
       <ElTableColumn label="Naziv" prop="name" />
       <ElTableColumn label="Kategorija" prop="productCategory.name" />
-      <ElTableColumn label="Prodano" prop="sold" />
+      <ElTableColumn label="€ / h" prop="price">
+        <template #default="items"> {{ items.row.price }} € </template>
+      </ElTableColumn>
       <ElTableColumn label="Akcije" align="center" width="80">
         <template #default="items">
           <ElButton
@@ -577,7 +582,7 @@ async function cloudinaryUpload(file: File, resourceType: 'image' | 'video') {
             <Editor v-model="form.description" class="editor" />
           </ElFormItem>
         </div>
-        <ElFormItem label="Cijena" prop="price" class="mt-20">
+        <ElFormItem label="Cijena po satu" prop="price" class="mt-20">
           <ElInputNumber
             v-model="form.price"
             :precision="2"

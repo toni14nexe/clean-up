@@ -12,8 +12,7 @@ export default eventHandler(async (event: H3Event) => {
     { path: '/api/users*', method: 'PUT', requiresAuth: true },
     { path: '/api/users*', method: 'DELETE', requiresAuth: true },
     { path: '/api/users/user', method: 'ALL', requiresAuth: true },
-    { path: '/api/auth/refresh', method: 'ALL', requiresAuth: true },
-    { path: '/api/app-settings', method: 'ALL', requiresAuth: true }
+    { path: '/api/auth/refresh', method: 'ALL', requiresAuth: true }
   ]
 
   // Check if the request URL is protected

@@ -12,7 +12,7 @@ type SearchResponse = {
 const { $axios } = useNuxtApp()
 const route = useRoute()
 const searchValue = ref(route.query.value)
-const searchInput = ref('')
+const searchInput = ref(route.query.value)
 const isLoading = ref(true)
 const emptySearch = ref(false)
 const data = ref<SearchResponse>()
@@ -26,6 +26,7 @@ watch(
   () => route.query.value,
   newSearchValue => {
     searchValue.value = newSearchValue
+    searchInput.value = newSearchValue
     getSearchData()
   }
 )
@@ -51,13 +52,13 @@ async function getSearchData() {
 }
 
 function handleSearch() {
-  if (searchInput.value?.trim().length < 3)
+  if (String(searchInput.value)?.trim().length < 3)
     ElNotification({
       type: 'warning',
       message: 'Vrijednost pretraživanja ne smije biti kraća od 3 znaka!',
       duration: 3000
     })
-  else if (searchInput.value?.trim().length > 100)
+  else if (String(searchInput.value)?.trim().length > 100)
     ElNotification({
       type: 'warning',
       message: 'Vrijednost pretraživanja ne smije biti duža od 100 znakova!',
@@ -80,17 +81,15 @@ function handleSearch() {
         <h3 class="color-primary">Pretraživanje: {{ searchValue }}</h3>
       </ElCol>
       <ElCol :xs="24" :sm="12" align="right">
-        <div class="search-wrapper">
-          <ElIcon :size="28">
-            <Search />
-          </ElIcon>
-          <input
-            v-model="searchInput"
-            placeholder="PRETRAŽI"
-            class="search"
-            @keyup.enter="handleSearch"
-          />
-        </div>
+        <ElIcon :size="18">
+          <Search />
+        </ElIcon>
+        <input
+          v-model="searchInput"
+          placeholder="Pretraži..."
+          class="search"
+          @keyup.enter="handleSearch"
+        />
       </ElCol>
     </ElRow>
     <template v-if="isLoading">
@@ -160,31 +159,32 @@ function handleSearch() {
 .product-widget {
   height: 30dvh;
 }
-.search-wrapper {
-  height: 100%;
-  align-content: center;
-  text-align: right;
-}
 .search {
-  background-color: #d9d9d9;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: -36px;
+  background-color: white;
   border: none;
   width: 350px;
   height: 50px;
   text-align: end;
-  font-family: amatic;
-  font-size: larger;
+  font-family: 'Inclusive Sans';
+  font-size: 18px;
   padding: 0 20px;
   border-radius: 4px;
-  margin-left: -36px;
+  border: 2px solid #409eff;
 }
 @media only screen and (max-width: 1100px) {
   .search {
     width: 260px;
   }
 }
-@media only screen and (max-width: 810px) {
+@media only screen and (max-width: 767px) {
   .search {
     width: 100%;
+  }
+  h3 {
+    font-size: 18px;
   }
 }
 </style>

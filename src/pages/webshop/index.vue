@@ -1,28 +1,31 @@
 <script setup lang="ts">
 useHead({
-  title: 'Trgovina',
+  title: 'Usluge',
   meta: [
     {
       name: 'description',
-      content: 'TODO'
+      content:
+        'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.'
     },
     { property: 'og:title', content: 'Backoffice' },
     {
       property: 'og:description',
-      content: 'TODO'
+      content:
+        'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.'
     }
   ]
 })
 
 useSeoMeta({
-  description: 'Trgovina',
-  ogTitle: `Trgovina`,
-  ogDescription: 'TODO',
+  description: 'Usluge',
+  ogTitle: `Usluge`,
+  ogDescription:
+    'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.',
   ogImage:
-    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png',
+    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png',
   twitterCard: 'summary_large_image',
   twitterImage:
-    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
 })
 </script>
 

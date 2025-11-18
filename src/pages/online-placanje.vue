@@ -9,9 +9,9 @@
     </ElRow>
     <ElRow>
       <p>
-        <strong>Horizon Escape</strong> koristi <strong>Stripe</strong> servis
-        za internet naplatu — napredni sustav za siguran prihvat platnih kartica
-        putem interneta.
+        <strong>Agencija za Čišćenje Horizon</strong> koristi
+        <strong>Stripe</strong> servis za internet naplatu — napredni sustav za
+        siguran prihvat platnih kartica putem interneta.
       </p>
       <p>
         Stripe je globalno priznato i certificirano rješenje za online naplatu
@@ -31,10 +31,10 @@
         tehnologiju najviše razine sigurnosti.
       </p>
       <p>
-        <strong>Horizon Escape</strong> nikada ne dolazi u kontakt s cjelovitim
-        podacima o vašoj platnoj kartici. Svi osjetljivi podaci obrađuju se
-        isključivo unutar Stripe sustava, koji je certificiran prema najvišim
-        sigurnosnim standardima industrije platnih kartica —
+        <strong>Agencija za Čišćenje Horizon</strong> nikada ne dolazi u kontakt
+        s cjelovitim podacima o vašoj platnoj kartici. Svi osjetljivi podaci
+        obrađuju se isključivo unutar Stripe sustava, koji je certificiran prema
+        najvišim sigurnosnim standardima industrije platnih kartica —
         <strong>PCI DSS Level 1</strong>.
       </p>
     </ElRow>
@@ -57,25 +57,27 @@
     <ElRow>
       <h2>Privatnost i sigurnost korisnika</h2>
       <p>
-        <strong>Horizon Escape</strong> i <strong>Stripe</strong> sve
-        prikupljene informacije smatraju povjerljivima te ih koriste isključivo
-        u svrhu izvršenja transakcije. Vaši osobni i platni podaci u potpunosti
-        su sigurni i zaštićeni najmodernijim mehanizmima zaštite podataka.
+        <strong>Agencija za Čišćenje Horizon</strong> i
+        <strong>Stripe</strong> sve prikupljene informacije smatraju
+        povjerljivima te ih koriste isključivo u svrhu izvršenja transakcije.
+        Vaši osobni i platni podaci u potpunosti su sigurni i zaštićeni
+        najmodernijim mehanizmima zaštite podataka.
       </p>
       <p>
-        Ni <strong>Horizon Escape</strong> ni njegovi zaposlenici nemaju pristup
-        niti mogu vidjeti podatke o vašoj platnoj kartici. Podaci o plaćanju ne
-        pohranjuju se na našim poslužiteljima niti su dostupni neovlaštenim
-        osobama.
+        Ni <strong>Agencija za Čišćenje Horizon</strong> ni njegovi zaposlenici
+        nemaju pristup niti mogu vidjeti podatke o vašoj platnoj kartici. Podaci
+        o plaćanju ne pohranjuju se na našim poslužiteljima niti su dostupni
+        neovlaštenim osobama.
       </p>
     </ElRow>
 
     <ElRow>
       <h2>SSL enkripcija</h2>
       <p>
-        Sve stranice unutar <strong>Horizon Escape</strong> sustava koje
-        zahtijevaju unos osobnih podataka osigurane su korištenjem SSL protokola
-        s 256-bitnom enkripcijom podataka. SSL enkripcija omogućuje prijenos
+        Sve stranice unutar
+        <strong>Agencija za Čišćenje Horizon</strong> sustava koje zahtijevaju
+        unos osobnih podataka osigurane su korištenjem SSL protokola s
+        256-bitnom enkripcijom podataka. SSL enkripcija omogućuje prijenos
         informacija na način da su one nedostupne trećim osobama.
       </p>
     </ElRow>
@@ -85,9 +87,9 @@
       <p>
         Obrada plaćanja odvija se isključivo u sustavu i tehničkoj te zakonskoj
         odgovornosti Stripe-a.
-        <strong>Horizon Escape</strong> dobiva samo obavijest o statusu
-        transakcije — potvrdu o uspjehu ili odbijanju plaćanja — bez ikakvih
-        podataka o samoj kartici.
+        <strong>Agencija za Čišćenje Horizon</strong> dobiva samo obavijest o
+        statusu transakcije — potvrdu o uspjehu ili odbijanju plaćanja — bez
+        ikakvih podataka o samoj kartici.
       </p>
       <p>
         Stripe redovito prolazi nezavisne sigurnosne audite, održava stroge

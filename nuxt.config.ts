@@ -33,7 +33,7 @@ export default defineNuxtConfig({
   },
   site: {
     url: 'horizon-escape.hr',
-    name: 'Horizon Escape'
+    name: 'Agencija za Čišćenje Horizon'
   },
   sitemap: {
     sources: ['/api/__sitemap__/urls']
@@ -78,30 +78,30 @@ export default defineNuxtConfig({
         {
           rel: 'apple-touch-icon',
           sizes: '180x180',
-          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
         },
         {
           rel: 'icon',
           type: 'image/png',
           sizes: '32x32',
-          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395850/favicon-32x32_j3b0qa.png'
+          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-32x32_o5emn9.png'
         },
         {
           rel: 'icon',
           type: 'image/png',
           sizes: '16x16',
-          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395850/favicon-16x16_gg3waa.png'
+          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-16x16_gkwvoc.png'
         },
         {
           rel: 'icon',
           type: 'image/png',
           sizes: '96x96',
-          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395850/favicon-96x96_d0nnz4.png'
+          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-96x96_sby9di.png'
         },
         {
           rel: 'apple-touch-icon',
           sizes: '180x180',
-          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+          href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
         }
         /* {
           rel: 'manifest',
@@ -110,23 +110,26 @@ export default defineNuxtConfig({
       ],
       meta: [
         {
-          name: 'Horizon Escape',
-          content: 'TODO'
+          name: 'Agencija za Čišćenje Horizon',
+          content:
+            'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.'
         },
         {
           name: 'keywords',
-          content: 'TODO'
+          content:
+            'čišćenje, agencija za čišćenje, čišćenje apartmana, čišćenje stanova, čišćenje kuća, Horizon, Agencija za Čišćenje Horizon, čišćenje poslovnih prostora, generalno čišćenje, čišćenje nakon najma, čišćenje, usluge čišćenja'
         },
         { name: 'author', content: 'InnovaTech obrt za informatičke usluge' },
-        { property: 'og:title', content: 'Horizon Escape' },
+        { property: 'og:title', content: 'Agencija za Čišćenje Horizon' },
         {
           property: 'og:description',
-          content: 'TODO'
+          content:
+            'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.'
         },
         {
           property: 'og:image',
           content:
-            'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+            'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
         }
       ]
     }

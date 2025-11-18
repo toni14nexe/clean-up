@@ -5,15 +5,16 @@
     </ElRow>
     <ElRow>
       <p>
-        Horizon Escape koristi kolačiće i slične tehnologije (dalje u tekstu:
-        kolačići) na internetskoj stranici Horizon Escapea (dalje u tekstu:
-        internetska stranica) kako bi posjetiteljima mogli pružiti uslugu s
-        potpunim funkcionalnostima i što kvalitetnijim sadržajem. Kolačići su
-        tekstualne datoteke smještene na računalo, mobilni telefon ili drugi
-        uređaj kojim posjetitelj pristupa internetskoj stranici odnosno
-        aplikaciji te se koriste za pokretanje stranice i korištenje svih
-        njezinih funkcionalnosti, poboljšanje korisničkog iskustva, praćenje
-        korištenja stranice i prikazivanje relevantnih ponuda.
+        Agencija za Čišćenje Horizon koristi kolačiće i slične tehnologije
+        (dalje u tekstu: kolačići) na internetskoj stranici Agencija za Čišćenje
+        Horizona (dalje u tekstu: internetska stranica) kako bi posjetiteljima
+        mogli pružiti uslugu s potpunim funkcionalnostima i što kvalitetnijim
+        sadržajem. Kolačići su tekstualne datoteke smještene na računalo,
+        mobilni telefon ili drugi uređaj kojim posjetitelj pristupa internetskoj
+        stranici odnosno aplikaciji te se koriste za pokretanje stranice i
+        korištenje svih njezinih funkcionalnosti, poboljšanje korisničkog
+        iskustva, praćenje korištenja stranice i prikazivanje relevantnih
+        ponuda.
       </p>
     </ElRow>
     <ElRow>

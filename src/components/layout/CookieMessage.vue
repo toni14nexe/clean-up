@@ -22,9 +22,10 @@ function acceptCookies() {
     </ElRow>
     <ElRow>
       <p>
-        U svrhu pružanja boljeg korisničkog iskustva, Horizon Escape koristi
-        obavezne kolačiće (cookies). Detaljne informacije možete pronaći na
-        stranici <a href="/cookies" class="link">Politika kolačića</a>.
+        U svrhu pružanja boljeg korisničkog iskustva, Agencija za Čišćenje
+        Horizon koristi obavezne kolačiće (cookies). Detaljne informacije možete
+        pronaći na stranici
+        <a href="/kolacici" class="link">Politika kolačića</a>.
       </p>
     </ElRow>
     <ElButton plain size="large" @click="acceptCookies">Razumijem</ElButton>

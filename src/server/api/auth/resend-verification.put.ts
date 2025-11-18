@@ -31,13 +31,13 @@ export default defineEventHandler(async event => {
 
   const verificationUrl = `${process.env.APP_BASE_URL}/login?token=${user.verificationToken}`
   const mailOptions = {
-    from: `"Horizon Escape" <${process.env.APP_EMAIL}>`,
+    from: `"Agencija za Čišćenje Horizon" <${process.env.APP_EMAIL}>`,
     to: body.email,
     subject: 'Potvrdite svoju email adresu',
     html: `
-           <a href="${url}" style="text-decoration: none"><h1 style="background-color: #d9d950; color: white; width: fit-content; padding: 0 15px 0 14px; border-radius: 4px">Horizon Escape</h1></a>
+           <a href="${url}" style="text-decoration: none"><h1 style="background-color: #409eff; color: white; width: fit-content; padding: 0 15px 0 14px; border-radius: 4px">Agencija za Čišćenje Horizon</h1></a>
            <p>Bok ${user.firstname} ${user.lastname},</p>
-           <p>Hvala na registraciji u Horizon Escape. Molimo vas potvrdite email otvaranjem linka:</p>
+           <p>Hvala na registraciji u Agencija za Čišćenje Horizon. Molimo vas potvrdite email otvaranjem linka:</p>
            <a href="${verificationUrl}">Potvrdite email</a>`
   }
   await transporter.sendMail(mailOptions)

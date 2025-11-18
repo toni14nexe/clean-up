@@ -80,7 +80,7 @@ function handleAddToCart(viewport: any) {
               <ElIcon :size="20" class="mr-8">
                 <ShoppingCart />
               </ElIcon>
-              Dodaj u košaricu
+              Dodaj sat
             </ElButton>
           </ElRow>
         </template>
@@ -119,7 +119,7 @@ function handleAddToCart(viewport: any) {
       <ElRow justify="center" align="middle" class="mb-24">
         <div class="add-button" @click="handleAddToCart($viewport)">
           <ElIcon :size="20" class="mr-8"><ShoppingCart /></ElIcon>
-          Dodaj u košaricu
+          Dodaj sat
         </div>
       </ElRow>
       <ElRow class="mb-12 social-share-buttons">
@@ -158,7 +158,7 @@ h3 {
   text-decoration-thickness: 3px;
 }
 .add-button {
-  background-color: #d9d9d9;
+  background-color: #409eff;
   border: none;
   height: 50px;
   text-align: center;

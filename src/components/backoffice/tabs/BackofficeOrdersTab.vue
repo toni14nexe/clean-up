@@ -246,12 +246,6 @@ async function exportData() {
         <ElDescriptionsItem label="Mjesto">
           {{ dialog.order?.buyerPlace }}
         </ElDescriptionsItem>
-        <ElDescriptionsItem label="Poštansi broj">
-          {{ dialog.order?.buyerZipCode }}
-        </ElDescriptionsItem>
-        <ElDescriptionsItem label="Država">
-          {{ dialog.order?.buyerCountry }}
-        </ElDescriptionsItem>
       </ElDescriptions>
     </ElRow>
 
@@ -268,14 +262,11 @@ async function exportData() {
         <ElDescriptionsItem label="Ukupna cijena">
           {{ dialog.order?.totalPrice }} €
         </ElDescriptionsItem>
-        <ElDescriptionsItem label="Vrijeme narudžbe">
+        <ElDescriptionsItem label="Narudžba kreirana">
           {{ formatISOToDatetime(dialog.order?.createdAt) }}
         </ElDescriptionsItem>
         <ElDescriptionsItem label="Način plaćanja">
           {{ dialog.order?.payment }}
-        </ElDescriptionsItem>
-        <ElDescriptionsItem label="Način dostave">
-          {{ dialog.order?.shipping }}
         </ElDescriptionsItem>
         <ElDescriptionsItem label="Opis">
           {{ dialog.order?.description || '-' }}
@@ -285,7 +276,38 @@ async function exportData() {
 
     <ElRow justify="center" class="mt-24 mb-24">
       <ElDescriptions
-        title="Proizvodi"
+        title="O usluzi"
+        border
+        style="min-width: 450px"
+        :column="1"
+      >
+        <ElDescriptionsItem label="Objekt">
+          {{ dialog.order?.objectType }}
+        </ElDescriptionsItem>
+        <ElDescriptionsItem label="Zakazano za">
+          {{
+            formatISOToDatetime(
+              new Date(dialog.order?.datetime as Date).toISOString()
+            )
+          }}
+        </ElDescriptionsItem>
+        <ElDescriptionsItem label="Djelatnika">
+          {{ dialog.order?.persons }}
+        </ElDescriptionsItem>
+        <ElDescriptionsItem label="Dodatno">
+          <ul v-if="dialog.order?.additional?.length">
+            <li v-for="additional in dialog.order.additional">
+              {{ additional }}
+            </li>
+          </ul>
+          <span v-else>-</span>
+        </ElDescriptionsItem>
+      </ElDescriptions>
+    </ElRow>
+
+    <ElRow justify="center" class="mt-24 mb-24">
+      <ElDescriptions
+        title="Lista narudžbe"
         border
         style="min-width: 450px"
         :column="1"
@@ -296,7 +318,7 @@ async function exportData() {
           </template>
           <span>Cijena: {{ product.price }} €</span>
           <br />
-          <span>Količina: {{ product.quantity }}</span>
+          <span>Sati: {{ product.quantity }} h</span>
         </ElDescriptionsItem>
       </ElDescriptions>
     </ElRow>
@@ -369,6 +391,10 @@ async function exportData() {
 </template>
 
 <style lang="css" scoped>
+ul {
+  margin: 0 0 0 15px;
+  padding: 0;
+}
 .w-300 {
   width: 300px;
 }

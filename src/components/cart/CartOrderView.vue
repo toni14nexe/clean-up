@@ -10,16 +10,14 @@ interface RuleForm {
   buyerNumber: string
   buyerAddress: string
   buyerPlace: string
-  buyerZipCode: string
-  buyerCountry: string
-  description: string
-  shipping: string
+  objectType: string
+  date: Date | string
+  time: string
+  datetime: Date | undefined
+  persons: number
+  additional: string[]
   payment: string
-}
-
-type ShippingOption = {
-  label: string
-  price: number
+  description: string
 }
 
 const emits = defineEmits(['backStep'])
@@ -27,7 +25,22 @@ const emits = defineEmits(['backStep'])
 const { $axios } = useNuxtApp()
 const fullscreenLoading = ref(false)
 const ruleFormRef = ref<FormInstance>()
-const shippingPrice = ref(0)
+const objectTypes = ref([
+  'Kuća / Stan',
+  'Ured',
+  'Stubište',
+  'Vila',
+  'Apartman(i)',
+  'Soba / Sobe'
+])
+const additionalOptions = ref([
+  { label: 'Eko sredstva + 5€', price: 5 },
+  { label: 'Ljestve + 5€', price: 5 },
+  { label: 'Parni čistać + 5€', price: 5 },
+  { label: 'Visokotlačni čistać + 5€', price: 5 }
+])
+const tomorrow = new Date()
+tomorrow.setDate(tomorrow.getDate() + 1)
 const form = reactive<RuleForm>({
   totalPrice: 0,
   buyerFullname: '',
@@ -35,17 +48,15 @@ const form = reactive<RuleForm>({
   buyerNumber: '',
   buyerAddress: '',
   buyerPlace: '',
-  buyerZipCode: '',
-  buyerCountry: '',
-  description: '',
-  shipping: '',
-  payment: ''
+  payment: '',
+  objectType: 'Kuća / Stan',
+  date: tomorrow,
+  time: '9:00',
+  datetime: undefined,
+  persons: 1,
+  additional: [],
+  description: ''
 })
-const shippingOptions = ref<ShippingOption[]>([
-  { label: 'Osobno preuzimanje', price: 0 },
-  { label: 'BoxNow', price: getCartTotal() >= 50 ? 0 : 4 }, // TODO nakon koliko je besplatna dostava
-  { label: 'DPD na adresu', price: getCartTotal() >= 50 ? 0 : 7 } // TODO nakon koliko je besplatna dostava
-])
 const rules = reactive<FormRules<RuleForm>>({
   buyerFullname: [
     { required: true, message: 'Unesite ime i prezime', trigger: 'change' },
@@ -94,28 +105,6 @@ const rules = reactive<FormRules<RuleForm>>({
     { required: true, message: 'Unesite mjesto', trigger: 'change' },
     { min: 3, message: 'Unesite ispravno mjesto', trigger: 'change' }
   ],
-  buyerZipCode: [
-    { required: true, message: 'Unesite poštanski broj', trigger: 'change' },
-    {
-      validator: (_, value, callback) => {
-        if (!validateZipCode(value))
-          callback(new Error('Unesite ispravni poštanski broj'))
-        else callback()
-      },
-      trigger: 'change'
-    }
-  ],
-  buyerCountry: [
-    { required: true, message: 'Unesite naziv države', trigger: 'change' },
-    {
-      validator: (_, value, callback) => {
-        if (!validateCountry(value))
-          callback(new Error('Unesite ispravni naziv države'))
-        else callback()
-      },
-      trigger: 'change'
-    }
-  ],
   description: [
     {
       max: 300,
@@ -123,36 +112,61 @@ const rules = reactive<FormRules<RuleForm>>({
       trigger: 'change'
     }
   ],
-  shipping: [
-    { required: true, message: 'Odaberite način dostave', trigger: 'change' }
-  ],
   payment: [
     { required: true, message: 'Odaberite način plaćanja', trigger: 'change' }
+  ],
+  objectType: [
+    { required: true, message: 'Odaberite objekt', trigger: 'change' }
+  ],
+  date: [{ required: true, message: 'Odaberite datum', trigger: 'change' }],
+  time: [{ required: true, message: 'Odaberite vrijeme', trigger: 'change' }],
+  persons: [
+    { required: true, message: 'Odaberite broj djelatnika', trigger: 'change' }
   ]
 })
+const disablePastDates = (date: Date) => {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  return date <= today
+}
+const totalPrice = computed(() => {
+  const base = getCartTotal()
+  const additionalSum = form.additional
+    .map(label => {
+      const item = additionalOptions.value.find(opt => opt.label === label)
+      return item ? item.price : 0
+    })
+    .reduce((a, b) => a + b, 0)
+  return (base + additionalSum).toFixed(2)
+})
+
+function setDates() {
+  const [hours, minutes] = form.time.split(':').map(Number)
+  const combined = new Date(form.date)
+  combined.setHours(hours, minutes, 0, 0)
+  form.datetime = combined
+  form.date = formatISOToDate(combined.toISOString())
+}
 
 async function proceed(formEl: FormInstance | undefined) {
   if (!formEl) return
   await formEl.validate(async valid => {
     if (valid) {
-      if (form.payment === 'Pouzećem') {
+      setDates()
+
+      if (form.payment === 'Gotovinom') {
         placeCashOrder()
       } else if (form.payment === 'Karticom jednokratno') {
         fullscreenLoading.value = true
         try {
-          const amount = Number(
-            (getCartTotal() + shippingPrice.value).toFixed(2)
-          )
+          const amount = Number(totalPrice.value)
           const cartList = getCartItems()
           localStorage.setItem(
             'dbForm',
             JSON.stringify({
               ...form,
               list: cartList,
-              totalPrice: Number(
-                (getCartTotal() + shippingPrice.value).toFixed(2)
-              ),
-              shippingPrice: shippingPrice.value
+              totalPrice: Number(totalPrice.value)
             })
           )
           const { data } = await $axios.post('/checkout', {
@@ -175,11 +189,6 @@ async function proceed(formEl: FormInstance | undefined) {
   })
 }
 
-function handleShippingChange(shippingOptions: ShippingOption) {
-  form.payment = ''
-  shippingPrice.value = shippingOptions.price
-}
-
 async function placeCashOrder() {
   fullscreenLoading.value = true
   const cartList = getCartItems()
@@ -187,8 +196,7 @@ async function placeCashOrder() {
     const response = await $axios.post('/order', {
       ...form,
       list: cartList,
-      totalPrice: Number((getCartTotal() + shippingPrice.value).toFixed(2)),
-      shippingPrice: shippingPrice.value
+      totalPrice: totalPrice.value
     })
 
     clearCart()
@@ -261,22 +269,78 @@ async function placeCashOrder() {
             class="maxw-300"
           />
         </ElFormItem>
-        <ElFormItem label="Poštanski broj" prop="buyerZipCode">
-          <ElInput
-            v-model="form.buyerZipCode"
-            placeholder="10000"
-            autocomplete="postal-code"
+
+        <ElDivider />
+
+        <ElFormItem label="Objekt" prop="objectType" class="mt-16">
+          <ElSelect
+            v-model="form.objectType"
+            placeholder="Odaberite objekt"
+            class="maxw-300"
+          >
+            <ElOption
+              v-for="object in objectTypes"
+              :key="object"
+              :label="object"
+              :value="object"
+            />
+          </ElSelect>
+        </ElFormItem>
+
+        <ElFormItem label="Datum" prop="date">
+          <ElDatePicker
+            v-model="form.date"
+            type="date"
+            format="DD.MM.YYYY."
+            :disabled-date="disablePastDates"
+            :clearable="false"
             class="maxw-300"
           />
         </ElFormItem>
-        <ElFormItem label="Država" prop="buyerCountry">
-          <ElInput
-            v-model="form.buyerCountry"
-            placeholder="Hrvatska"
-            autocomplete="country"
+
+        <ElFormItem label="Vrijeme" prop="time">
+          <ElTimePicker
+            v-model="form.time"
+            arrow-control
+            placeholder="Vrijeme"
+            format="HH:mm"
+            value-format="HH:mm"
+            :clearable="false"
             class="maxw-300"
           />
         </ElFormItem>
+
+        <ElFormItem label="Djelatnika" prop="persons">
+          <ElSelect
+            v-model="form.persons"
+            placeholder="Odaberite djelatnike"
+            class="maxw-300"
+          >
+            <ElOption
+              v-for="number in 5"
+              :key="number"
+              :label="number"
+              :value="number"
+            />
+          </ElSelect>
+        </ElFormItem>
+
+        <ElFormItem label="Dodatno" prop="additional">
+          <ElSelect
+            v-model="form.additional"
+            placeholder="Dodatno"
+            multiple
+            class="multiselect"
+          >
+            <ElOption
+              v-for="option in additionalOptions"
+              :key="option.label"
+              :label="option.label"
+              :value="option.label"
+            />
+          </ElSelect>
+        </ElFormItem>
+
         <ElFormItem label="Napomena" prop="description">
           <ElInput
             v-model="form.description"
@@ -290,44 +354,9 @@ async function placeCashOrder() {
 
         <ElDivider />
 
-        <ElFormItem
-          label="Dostava"
-          prop="shipping"
-          class="mt-16"
-          style="width: 200px"
-        >
-          <ElRadioGroup v-model="form.shipping" class="maxw-100">
-            <ElRadio
-              v-for="option in shippingOptions"
-              :value="option.label"
-              size="large"
-              @change="handleShippingChange(option)"
-              >{{
-                `${option.label}${option.price ? ' - ' + option.price.toFixed(2) : ''}`
-              }}</ElRadio
-            >
-          </ElRadioGroup>
-        </ElFormItem>
-        <p
-          v-if="form.shipping === 'Osobno preuzimanje'"
-          class="shipping-description"
-        >
-          <ElIcon :size="$viewport.isLessThan('tablet') ? 14 : 18"
-            ><ElIconWarningFilled
-          /></ElIcon>
-          Osobno preuzimanje moguće je u našoj poslovnici.
-        </p>
-
-        <ElDivider />
-
         <ElFormItem label="Plaćanje" prop="payment" class="mt-16">
           <ElRadioGroup v-model="form.payment" class="maxw-100">
-            <ElRadio
-              v-if="form.shipping === 'Osobno preuzimanje'"
-              value="Pouzećem"
-              size="large"
-              >Pouzećem</ElRadio
-            >
+            <ElRadio value="Gotovinom" size="large">Gotovinom</ElRadio>
             <ElRadio value="Karticom jednokratno" size="large"
               >Karticom - jednokratno</ElRadio
             >
@@ -337,12 +366,7 @@ async function placeCashOrder() {
         <ElDivider />
 
         <ElFormItem label="Ukupna cijena" prop="totalPrice" class="mt-16">
-          <b class="ml-4 total-price"
-            >{{ getCartTotal().toFixed(2) }} €
-            {{
-              shippingPrice ? ` + Dostava ${shippingPrice.toFixed(2)} €` : ''
-            }}</b
-          >
+          <b class="ml-4 total-price">{{ totalPrice }} €</b>
         </ElFormItem>
 
         <ElDivider />
@@ -378,12 +402,8 @@ async function placeCashOrder() {
 .total-price {
   font-size: 18px;
 }
-.shipping-description {
-  max-width: 412px;
-  text-align: center;
-  text-wrap: wrap;
-  font-size: 18px;
-  color: var(--el-color-primary);
+.multiselect {
+  max-width: 220.66px;
 }
 .w-200 {
   width: 200px;
@@ -393,10 +413,5 @@ async function placeCashOrder() {
 }
 .maxw-300 {
   max-width: 300px;
-}
-@media (max-width: 767px) {
-  .shipping-description {
-    font-size: 14px;
-  }
 }
 </style>

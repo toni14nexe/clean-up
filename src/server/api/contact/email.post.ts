@@ -18,11 +18,11 @@ export default defineEventHandler(async event => {
   })
 
   const mailOptions = {
-    from: `"Horizon Escape" <${process.env.APP_EMAIL}>`,
+    from: `"Agencija za Čišćenje Horizon" <${process.env.APP_EMAIL}>`,
     to: process.env.APP_EMAIL,
-    subject: `Horizon Escape kontakt - ${body.email}`,
+    subject: `Agencija za Čišćenje Horizon kontakt - ${body.email}`,
     html: `
-           <a href="${url}" style="text-decoration: none"><h1 style="background-color: #d9d950; color: white; width: fit-content; padding: 0 15px 0 14px; border-radius: 4px">Horizon Escape</h1></a>
+           <a href="${url}" style="text-decoration: none"><h1 style="background-color: #409eff; color: white; width: fit-content; padding: 0 15px 0 14px; border-radius: 4px">Agencija za Čišćenje Horizon</h1></a>
            <h3>Kontakt</h3>
            <p>Korisnik: ${body.fullname || '-'}</p>
            <p>Email: ${body.email}</p>

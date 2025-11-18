@@ -4,11 +4,14 @@ import hr from 'element-plus/es/locale/lang/hr'
 
 useHead({
   titleTemplate: title =>
-    title ? `Horizon Escape - ${title}` : 'Horizon Escape',
+    title
+      ? `Agencija za Čišćenje Horizon - ${title}`
+      : 'Agencija za Čišćenje Horizon',
   meta: [
     {
       name: 'keywords',
-      content: 'TODO'
+      content:
+        'čišćenje, agencija za čišćenje, čišćenje apartmana, čišćenje stanova, čišćenje kuća, Horizon, Agencija za Čišćenje Horizon, čišćenje poslovnih prostora, generalno čišćenje, čišćenje nakon najma, čišćenje, usluge čišćenja'
     },
     { name: 'author', content: 'InnovaTech obrt za informatičke usluge' },
     { property: 'og:type', content: 'website' },
@@ -17,7 +20,7 @@ useHead({
     {
       property: 'og:image',
       content:
-        'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+        'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
     },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
@@ -26,7 +29,7 @@ useHead({
     {
       name: 'twitter:image',
       content:
-        'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+        'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
     },
     {
       name: 'google-site-verification',
@@ -37,11 +40,11 @@ useHead({
     {
       rel: 'icon',
       type: 'image/png',
-      href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395850/favicon-96x96_d0nnz4.png'
+      href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-96x96_sby9di.png'
     },
     {
       rel: 'apple-touch-icon',
-      href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+      href: 'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
     }
   ]
 })
@@ -54,33 +57,36 @@ useHead({
         rel="apple-touch-icon"
         type="image/png"
         sizes="180x180"
-        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png"
+        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763395850/favicon-32x32_j3b0qa.png"
+        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-32x32_o5emn9.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763395850/favicon-16x16_gg3waa.png"
+        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-16x16_gkwvoc.png"
       />
       <link
         rel="icon"
         type="image/png"
-        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763395850/favicon-96x96_d0nnz4.png"
+        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-96x96_sby9di.png"
         sizes="96x96"
       />
       <link
         rel="apple-touch-icon"
         type="image/png"
         sizes="180x180"
-        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png"
+        href="https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png"
       />
-      <meta name="apple-mobile-web-app-title" content="Horizon Escape" />
+      <meta
+        name="apple-mobile-web-app-title"
+        content="Agencija za Čišćenje Horizon"
+      />
     </head>
   </ClientOnly>
 

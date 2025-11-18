@@ -13,32 +13,36 @@ export default defineEventHandler(async event => {
       !body.buyerNumber ||
       !body.buyerAddress ||
       !body.buyerPlace ||
-      !body.buyerZipCode ||
-      !body.buyerCountry ||
+      !body.objectType ||
+      !body.date ||
+      !body.time ||
+      !body.datetime ||
+      !body.persons ||
       !body.list ||
-      !body.shipping ||
       !body.payment
     )
       throw createError({
         statusCode: 400,
-        statusMessage:
-          "Body parameter is missing, this body should include: 'list', 'totalPrice', 'buyerFullname', 'buyerEmail', 'buyerNumber', 'buyerAddress', 'buyerPlace', 'buyerZipCode' and 'buyerCountry', 'shippment', 'payment'. 'buyerNumber' and 'description' are optional."
+        statusMessage: 'Body parameter is missing.'
       })
 
     const order = await prisma.order.create({
       data: {
         list: body.list,
-        totalPrice: body.totalPrice,
+        totalPrice: Number(body.totalPrice),
         buyerFullname: body.buyerFullname,
         buyerEmail: body.buyerEmail,
         buyerNumber: body.buyerNumber,
         buyerAddress: body.buyerAddress,
         buyerPlace: body.buyerPlace,
-        buyerZipCode: body.buyerZipCode,
-        buyerCountry: body.buyerCountry,
+        objectType: body.objectType,
+        date: body.date,
+        time: body.time,
+        datetime: body.datetime,
+        persons: body.persons,
+        additional: body.additional,
         description: body.description,
-        payment: body.payment,
-        shipping: body.shipping
+        payment: body.payment
       }
     })
 
@@ -61,20 +65,20 @@ export default defineEventHandler(async event => {
       <div style="margin-bottom: 10px; padding: 8px; border-bottom: 1px solid #eee;">
         <p><b>${item.name}</b></p>
         ${item.image ? `<img src="${item.image}" alt="${item.name}" width="120" style="margin-top:5px;"/>` : ''}
-        <p>Količina: ${item.quantity}</p>
+        <p>Sati: ${item.quantity} h</p>
         <p>Cijena: ${item.price.toFixed(2)} €</p>
-        <p>Ukupno: ${item.totalPrice.toFixed(2)} €</p>
+        <p>Ukupno: ${Number(item.totalPrice).toFixed(2)} €</p>
       </div>
     `
       )
       .join('')
 
     const mailOptions = {
-      from: `"Horizon Escape" <${process.env.APP_EMAIL}>`,
+      from: `"Agencija za Čišćenje Horizon" <${process.env.APP_EMAIL}>`,
       to: [body.buyerEmail, process.env.APP_EMAIL],
-      subject: `Horizon Escape narudžba ${order.orderNumber}`,
+      subject: `Agencija za Čišćenje Horizon narudžba ${order.orderNumber}`,
       html: `
-               <a href="${process.env.APP_BASE_URL}" style="text-decoration: none"><h1 style="background-color: #d9d950; color: white; width: fit-content; padding: 0 15px 0 14px; border-radius: 4px">Horizon Escape</h1></a>
+               <a href="${process.env.APP_BASE_URL}" style="text-decoration: none"><h1 style="background-color: #409eff; color: white; width: fit-content; padding: 0 15px 0 14px; border-radius: 4px">Agencija za Čišćenje Horizon</h1></a>
                <h3>Narudžba ${order.orderNumber} je zaprimljena u ${formatToDatetime(String(order.createdAt))}.</h3>
                <br/>
                <b><p>Kupac</p></b>
@@ -83,24 +87,29 @@ export default defineEventHandler(async event => {
                <p>Mobitel: ${order.buyerNumber || '-'}</p>
                <p>Adresa: ${order.buyerAddress}</p>
                <p>Mjesto: ${order.buyerPlace}</p>
-               <p>Poštanski broj: ${order.buyerZipCode}</p>
-               <p>Država: ${order.buyerCountry}</p>
-               <p>Napomena: ${order.description || '-'}</p>
+               <br/>
+               <p>Objekt: ${order.objectType || '-'}</p>
+               <p>Datum/Vrijeme usluge: ${formatToDatetime(String(order.datetime)) || '-'}</p>
+               <p>Broj djelatnika: ${order.persons || '-'}</p>
+               <p>Dodatno: ${
+                 Array.isArray(order.additional) && order.additional.length > 0
+                   ? order.additional.join(', ')
+                   : '-'
+               }</p>
                <br/>
                <b><p>Prodavač</p></b>
-               <p>Horizon Escape d.o.o.</p>
+               <p>Agencija za Čišćenje Horizon d.o.o.</p>
                <p>Email: info@horizon-escape.hr</p>
                <p>Mobitel: +385 99 7900 257</p>
                <p>Adresa: Baćina 2</p>
                <p>Mjesto: 51219 Čavle</p>
                <p>Država: Hrvatska</p>
                <br/>
-               <b><p>Dostava: ${order.shipping}${body.shippingPrice ? ` - ${body.shippingPrice.toFixed(2)} €` : ''}</p></b>
                <b><p>Plaćanje: ${order.payment}</p></b>
                <br/>
                <b><p>Narudžba</p></b>
                ${orderItemsHtml}
-               <b><p>Ukupna cijena: ${body.totalPrice.toFixed(2)} €</p></b>
+               <b><p>Ukupna cijena: ${Number(body.totalPrice).toFixed(2)} €</p></b>
                <br/>
                <a href="${process.env.APP_BASE_URL}/narudzba/${order.id}">Narudžba dostupna ovdje</a>`
     }

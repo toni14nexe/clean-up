@@ -88,7 +88,7 @@ function handleSortByChange() {
           <ElRow justify="center">
             <ElCol :xs="0" :sm="8" />
             <ElCol :xs="24" :sm="8" align="center">
-              <h2 class="color-primary">TRGOVINA</h2>
+              <h3 class="color-primary">USLUGE</h3>
             </ElCol>
             <ElCol :xs="24" :sm="8">
               <div class="search-wrapper">
@@ -113,7 +113,7 @@ function handleSortByChange() {
               :sm="8"
               :align="$viewport.isLessThan('tablet') ? 'start' : 'center'"
             >
-              <h3>PROIZVODI</h3>
+              <h3>USLUGE</h3>
             </ElCol>
             <ElCol :xs="12" :sm="8" align="end">
               <ElSelect
@@ -151,7 +151,7 @@ function handleSortByChange() {
       <ElRow justify="center">
         <ElCol :xs="0" :sm="8" />
         <ElCol :xs="24" :sm="8" align="center">
-          <h2 class="color-primary">TRGOVINA</h2>
+          <h3 class="color-primary">USLUGE</h3>
         </ElCol>
         <ElCol :xs="24" :sm="8">
           <div class="search-wrapper">
@@ -176,7 +176,7 @@ function handleSortByChange() {
           :sm="8"
           :align="$viewport.isLessThan('tablet') ? 'start' : 'center'"
         >
-          <h3>PROIZVODI</h3>
+          <h3>USLUGE</h3>
         </ElCol>
         <ElCol :xs="12" :sm="8" align="end" />
       </ElRow>
@@ -186,7 +186,7 @@ function handleSortByChange() {
       <ElRow justify="center">
         <ElCol :xs="0" :sm="8" />
         <ElCol :xs="24" :sm="8" align="center">
-          <h1 class="color-primary">TRGOVINA</h1>
+          <h3 class="color-primary">USLUGE</h3>
         </ElCol>
         <ElCol :xs="24" :sm="8">
           <div class="search-wrapper">
@@ -215,7 +215,7 @@ function handleSortByChange() {
           :sm="8"
           :align="$viewport.isLessThan('tablet') ? 'start' : 'center'"
         >
-          <h3>PROIZVODI</h3>
+          <h3>USLUGE</h3>
         </ElCol>
         <ElCol :xs="12" :sm="8" align="end">
           <ElSelect
@@ -275,7 +275,7 @@ function handleSortByChange() {
   font-size: 18px;
   padding: 0 20px;
   border-radius: 4px;
-  border: 2px solid #d9d9d9;
+  border: 2px solid #409eff;
 }
 .product-container {
   height: 30dvh;

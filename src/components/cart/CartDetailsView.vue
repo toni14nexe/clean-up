@@ -40,7 +40,7 @@ function aaa() {
         <p>CIJENA</p>
       </ElCol>
       <ElCol :xs="4" :sm="3">
-        <p>{{ $viewport.isGreaterOrEquals('tablet') ? 'KOLIČINA' : 'KOL' }}</p>
+        <p>SATI</p>
       </ElCol>
       <ElCol :xs="4" :sm="3">
         <p>UKUPNO</p>

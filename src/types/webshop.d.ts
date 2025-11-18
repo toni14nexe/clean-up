@@ -5,13 +5,16 @@ export type Order = {
   buyerFullname: String
   buyerAddress: String
   buyerPlace: String
-  buyerZipCode: String
-  buyerCountry: String
   buyerEmail: String
   buyerNumber?: String
+  objectType?: String
+  date?: String
+  time?: String
+  datetime?: Date
+  persons?: Number
+  additional?: String[]
   description?: String
   payment: String
-  shipping: String
   list: {
     id: string
     name: string

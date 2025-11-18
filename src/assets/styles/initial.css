@@ -16,15 +16,6 @@ html {
     sans-serif;
 }
 
-:root {
-  --el-color-primary: #d2d21d !important;
-  --el-color-primary-light-1: #e0df66 !important;
-  --el-color-primary-light-3: #e8e58c !important;
-  --el-color-primary-light-5: #f0eba8 !important;
-  --el-color-primary-light-7: #f7f2c6 !important;
-  --el-color-primary-light-9: #fcfbe8 !important;
-}
-
 .el-button--primary {
   --el-button-hover-bg-color: var(--el-color-primary-light-3) !important;
 }

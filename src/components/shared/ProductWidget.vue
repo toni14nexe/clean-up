@@ -25,6 +25,7 @@ defineProps(['product'])
             <span v-if="product.discountPrice" class="ml-12">
               {{ Number(product.discountPrice).toFixed(2) }}
             </span>
+            <span class="ml-4">€ / sat</span>
           </ElRow>
         </div>
       </div>

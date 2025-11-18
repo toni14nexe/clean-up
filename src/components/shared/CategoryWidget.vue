@@ -75,7 +75,7 @@ defineProps(['category'])
 h3 {
   font-size: 20px;
 }
-@media screen and (max-width: 1025px) {
+@media (max-width: 767px) {
   h3 {
     font-size: 18px;
   }

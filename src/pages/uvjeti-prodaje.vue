@@ -8,25 +8,26 @@
       <p>
         Ovi uvjeti prodaje odnose se na kupnju proizvoda i usluga putem
         aplikacije
-        <strong>Horizon Escape</strong>. Korištenjem aplikacije i obavljanjem
-        kupnje smatra se da je korisnik upoznat s ovim uvjetima i da ih u
-        cijelosti prihvaća.
+        <strong>Agencija za Čišćenje Horizon</strong>. Korištenjem aplikacije i
+        obavljanjem kupnje smatra se da je korisnik upoznat s ovim uvjetima i da
+        ih u cijelosti prihvaća.
       </p>
     </ElRow>
 
     <ElRow>
       <h2>1. Način plaćanja</h2>
       <p>
-        Plaćanje putem aplikacije <strong>Horizon Escape</strong> vrši se
-        isključivo online putem <strong>Stripe</strong> platforme, sigurnog
-        globalnog sustava za elektronička plaćanja. Stripe omogućuje plaćanje
-        kreditnim i debitnim karticama (Visa, MasterCard, Maestro i dr.).
+        Plaćanje putem aplikacije
+        <strong>Agencija za Čišćenje Horizon</strong> vrši se isključivo online
+        putem <strong>Stripe</strong> platforme, sigurnog globalnog sustava za
+        elektronička plaćanja. Stripe omogućuje plaćanje kreditnim i debitnim
+        karticama (Visa, MasterCard, Maestro i dr.).
       </p>
       <p>
         Sve transakcije obavljaju se putem sigurnog SSL protokola, čime se jamči
         zaštita osobnih i financijskih podataka korisnika.
-        <strong>Horizon Escape</strong> ne pohranjuje podatke o karticama
-        korisnika.
+        <strong>Agencija za Čišćenje Horizon</strong> ne pohranjuje podatke o
+        karticama korisnika.
       </p>
     </ElRow>
 
@@ -46,7 +47,7 @@
         Nakon uspješno izvršenog plaćanja putem Stripe sustava, korisniku će
         digitalni proizvod, usluga ili pristup određenom sadržaju biti
         automatski omogućen putem korisničkog računa na aplikaciji
-        <strong>Horizon Escape</strong>.
+        <strong>Agencija za Čišćenje Horizon</strong>.
       </p>
       <p>
         U slučaju tehničkih poteškoća ili kašnjenja isporuke, korisnik može
@@ -75,9 +76,10 @@
     </ElRow>
     <ElRow>
       <p>
-        <strong>Horizon Escape</strong> koristi napredne sigurnosne mjere kako
-        bi zaštitio podatke svojih korisnika. Svi podaci o plaćanju obrađuju se
-        isključivo putem Stripe sustava i nisu dostupni trećim stranama.
+        <strong>Agencija za Čišćenje Horizon</strong> koristi napredne
+        sigurnosne mjere kako bi zaštitio podatke svojih korisnika. Svi podaci o
+        plaćanju obrađuju se isključivo putem Stripe sustava i nisu dostupni
+        trećim stranama.
       </p>
       <p>
         Korisnik je odgovoran za zaštitu svojih korisničkih podataka i zaporke
@@ -90,9 +92,9 @@
     </ElRow>
     <ElRow>
       <p>
-        Davatelj usluge <strong>Horizon Escape</strong> zadržava pravo izmjene
-        ovih uvjeta prodaje u bilo kojem trenutku, bez prethodne najave.
-        Promjene stupaju na snagu objavom na ovoj stranici.
+        Davatelj usluge <strong>Agencija za Čišćenje Horizon</strong> zadržava
+        pravo izmjene ovih uvjeta prodaje u bilo kojem trenutku, bez prethodne
+        najave. Promjene stupaju na snagu objavom na ovoj stranici.
       </p>
     </ElRow>
 
@@ -103,7 +105,8 @@
       <p>
         Za sva pitanja vezana uz uvjete prodaje, plaćanje ili korištenje
         aplikacije
-        <strong>Horizon Escape</strong>, možete nam se obratiti putem:
+        <strong>Agencija za Čišćenje Horizon</strong>, možete nam se obratiti
+        putem:
       </p>
     </ElRow>
     <ElRow>

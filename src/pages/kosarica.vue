@@ -4,25 +4,25 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Horizon Escape košarica proizvoda.'
+      content: 'Agencija za Čišćenje Horizon košarica proizvoda.'
     },
     { property: 'og:title', content: 'Kontakt' },
     {
       property: 'og:description',
-      content: 'Horizon Escape košarica proizvoda.'
+      content: 'Agencija za Čišćenje Horizon košarica proizvoda.'
     }
   ]
 })
 
 useSeoMeta({
-  description: 'Horizon Escape košarica proizvoda.',
+  description: 'Agencija za Čišćenje Horizon košarica proizvoda.',
   ogTitle: `Košarica`,
-  ogDescription: 'Horizon Escape košarica proizvoda.',
+  ogDescription: 'Agencija za Čišćenje Horizon košarica proizvoda.',
   ogImage:
-    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png',
+    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png',
   twitterCard: 'summary_large_image',
   twitterImage:
-    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
 })
 </script>
 

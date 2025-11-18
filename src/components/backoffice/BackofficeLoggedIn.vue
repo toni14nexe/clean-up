@@ -42,7 +42,7 @@ const activeTab = ref()
             v-if="activeTab === 'webshop-categories'"
           />
         </ElTabPane>
-        <ElTabPane label="Proizvodi" name="webshop-products">
+        <ElTabPane label="Usluge" name="webshop-products">
           <BackofficeWebshopProductsTab
             v-if="activeTab === 'webshop-products'"
           />

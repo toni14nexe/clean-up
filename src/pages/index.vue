@@ -9,26 +9,30 @@ useHead({
   title: 'Naslovnica',
   meta: [
     {
-      name: 'Horizon Escape',
-      content: 'TODO'
+      name: 'Agencija za Čišćenje Horizon',
+      content:
+        'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.'
     },
     { property: 'og:title', content: 'Kontakt' },
     {
       property: 'og:description',
-      content: 'TODO'
+      content:
+        'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.'
     }
   ]
 })
 
 useSeoMeta({
-  description: 'TODO',
+  description:
+    'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.',
   ogTitle: `Naslovnica`,
-  ogDescription: 'TODO',
+  ogDescription:
+    'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.',
   ogImage:
-    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png',
+    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png',
   twitterCard: 'summary_large_image',
   twitterImage:
-    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
 })
 
 const route = useRoute()
@@ -77,7 +81,7 @@ function handleSearch() {
           :duration="1000"
           :delay="900"
         >
-          HORIZON ESCAPE
+          Agencija za Čišćenje Horizon
         </div>
         <div class="ml-16" v-motion-slide-top :duration="1000" :delay="600">
           <ElIcon :size="18">
@@ -138,10 +142,10 @@ function handleSearch() {
           <b>
             Naša misija je pretvoriti svaki prostor u mjesto koje diše svježinom
             i harmonijom. Vjerujemo da čisto okruženje donosi mir, fokus i
-            inspiraciju, te daje temelj za kvalitetniji život. HORIZON ESCAPE
-            objedinjuje profesionalnost, pouzdanost i moderni pristup čišćenju —
-            stvarajući prostore u kojima se može istinski živjeti, raditi i
-            odmarati.
+            inspiraciju, te daje temelj za kvalitetniji život. Agencija za
+            Čišćenje Horizon objedinjuje profesionalnost, pouzdanost i moderni
+            pristup čišćenju — stvarajući prostore u kojima se može istinski
+            živjeti, raditi i odmarati.
           </b>
         </p>
         <ClientOnly>
@@ -196,7 +200,7 @@ function handleSearch() {
   font-size: 18px;
   padding: 0 20px;
   border-radius: 4px;
-  border: 2px solid #d9d9d9;
+  border: 2px solid #409eff;
 }
 .big-title {
   margin-top: 70px;

@@ -15,25 +15,6 @@ onMounted(() => {
   categoriesStore.getCategories()
   mounted.value = true
 })
-
-function handleSearch() {
-  if (searchValue.value.trim().length < 3)
-    ElNotification({
-      type: 'warning',
-      message: 'Vrijednost pretraživanja ne smije biti kraća od 3 znaka!',
-      duration: 3000
-    })
-  else if (searchValue.value.trim().length > 100)
-    ElNotification({
-      type: 'warning',
-      message: 'Vrijednost pretraživanja ne smije biti duža od 100 znakova!',
-      duration: 3000
-    })
-  else {
-    navigateTo(`/pretrazivanje?value=${searchValue.value}`)
-    if (mobileSearchPopoverRef.value) mobileSearchPopoverRef.value.hide()
-  }
-}
 </script>
 
 <template>
@@ -42,7 +23,7 @@ function handleSearch() {
     <ElHeader>
       <div v-if="$viewport.isLessThan('tablet')" class="header-container">
         <NuxtLink to="/" v-motion-slide-top :duration="1000">
-          <ElIcon :size="36">
+          <ElIcon :size="44">
             <LogoIcon />
           </ElIcon>
         </NuxtLink>
@@ -53,7 +34,7 @@ function handleSearch() {
           :delay="300"
           class="icon-link"
         >
-          <p>TRGOVINA</p>
+          <p>USLUGE</p>
         </NuxtLink>
         <NuxtLink
           to="/o-nama"
@@ -107,8 +88,8 @@ function handleSearch() {
             <NuxtLink to="/" class="title" v-motion-slide-top :duration="1000">
               <h3 :class="{ 'color-primary': route.name === 'index' }">
                 <ElRow justify="center" align="middle">
-                  <ElIcon :size="36">
-                    <LogoIcon style="margin-right: 8px" />
+                  <ElIcon :size="48">
+                    <LogoIcon />
                   </ElIcon>
                   NASLOVNICA
                 </ElRow>
@@ -122,7 +103,7 @@ function handleSearch() {
               :delay="300"
             >
               <h3 :class="{ 'color-primary': route.name === 'webshop' }">
-                <ElRow justify="center" align="middle"> TRGOVINA </ElRow>
+                <ElRow justify="center" align="middle"> USLUGE </ElRow>
               </h3>
             </NuxtLink>
             <NuxtLink

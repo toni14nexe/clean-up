@@ -107,23 +107,21 @@ async function getOrder() {
               Vrijeme: {{ formatISOToDatetime(order?.createdAt) }}
             </ElRow>
             <ElRow>Ukupna cijena: {{ order?.totalPrice }}asasa</ElRow>
-            <ElRow>Dostava: {{ order?.shipping }}</ElRow>
             <ElRow class="mb-12">Plaćanje: {{ order?.payment }}</ElRow>
 
             <ElRow class="text-underline"> Kupac </ElRow>
             <ElRow>Ime i prezime: {{ order?.buyerFullname }}</ElRow>
             <ElRow>Mjesto: {{ order?.buyerPlace }}</ElRow>
-            <ElRow class="mb-12">Država: {{ order?.buyerCountry }}</ElRow>
 
             <ElRow class="text-underline"> Prodavač </ElRow>
-            <ElRow>Horizon Escape d.o.o.</ElRow>
+            <ElRow>Agencija za Čišćenje Horizon d.o.o.</ElRow>
             <ElRow>Email: info@horizon-escape.hr</ElRow>
-            <ElRow>Mobitel: TODO</ElRow>
+            <ElRow>Mobitel: +385 91 6175 515</ElRow>
             <ElRow>Stara cesta 3</ElRow>
             <ElRow>Mjesto: 23241 Poličnik</ElRow>
             <ElRow class="mb-12">Država: Hrvatska</ElRow>
 
-            <ElRow class="text-underline"> Proizvodi </ElRow>
+            <ElRow class="text-underline"> Usluge </ElRow>
             <ElRow v-for="product in order?.list">
               {{
                 `${product.name} - ${product.quantity} x ${product.price.toFixed(2)} = ${product.totalPrice.toFixed(2)}`

@@ -8,25 +8,29 @@ useHead({
   meta: [
     {
       name: 'O nama',
-      content: 'TODO'
+      content:
+        'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.'
     },
     { property: 'og:title', content: 'Kontakt' },
     {
       property: 'og:description',
-      content: 'TODO'
+      content:
+        'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.'
     }
   ]
 })
 
 useSeoMeta({
-  description: 'TODO',
+  description:
+    'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.',
   ogTitle: `Kontakt`,
-  ogDescription: 'TODO',
+  ogDescription:
+    'Agencija za čišćenje Horizon — profesionalne usluge čišćenja domova, apartmana, poslovnih prostora i turističkog smještaja. Brzo, pouzdano i temeljito.',
   ogImage:
-    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png',
+    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png',
   twitterCard: 'summary_large_image',
   twitterImage:
-    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763395851/favicon-180x180_lamunf.png'
+    'https://res.cloudinary.com/dnahqjamb/image/upload/v1763502590/favicon-180x180_ajos55.png'
 })
 </script>
 
@@ -47,7 +51,7 @@ useSeoMeta({
           :duration="1000"
           :delay="900"
         >
-          HORIZON ESCAPE
+          Agencija za Čišćenje Horizon
         </div>
         <p
           v-motion-slide-bottom
@@ -71,8 +75,8 @@ useSeoMeta({
         Inspirirani svježinom koju donosi uredan prostor, stvaramo okruženja
         koja vraćaju ravnotežu i jasnoću. Vjerujemo da čistoća nije samo
         vizualni dojam — to je energija koju prostor šalje, osjećaj koji te
-        dočeka čim uđeš. HORIZON ESCAPE nastao je iz želje da svaki dom i radni
-        prostor dobije novu dimenziju udobnosti i mira.
+        dočeka čim uđeš. Agencija za Čišćenje Horizon nastao je iz želje da
+        svaki dom i radni prostor dobije novu dimenziju udobnosti i mira.
       </p>
     </ElRow>
 
@@ -127,10 +131,10 @@ useSeoMeta({
           <b>
             Naša misija je pretvoriti svaki prostor u mjesto koje diše svježinom
             i harmonijom. Vjerujemo da čisto okruženje donosi mir, fokus i
-            inspiraciju, te daje temelj za kvalitetniji život. HORIZON ESCAPE
-            objedinjuje profesionalnost, pouzdanost i moderni pristup čišćenju —
-            stvarajući prostore u kojima se može istinski živjeti, raditi i
-            odmarati.
+            inspiraciju, te daje temelj za kvalitetniji život. Agencija za
+            Čišćenje Horizon objedinjuje profesionalnost, pouzdanost i moderni
+            pristup čišćenju — stvarajući prostore u kojima se može istinski
+            živjeti, raditi i odmarati.
           </b>
         </p>
         <ClientOnly>
@@ -144,7 +148,7 @@ useSeoMeta({
 
     <ElRow class="mt-24">
       <ElCol class="company-info-text" align="center"
-        >Horizon Escape d.o.o.</ElCol
+        >Agencija za Čišćenje Horizon d.o.o.</ElCol
       >
       <ElCol class="company-info-text" align="center"
         >Stara cesta 3, 23241 Poličnik</ElCol
@@ -153,10 +157,31 @@ useSeoMeta({
       <ElCol class="company-info-text" align="center"
         >Email: info@horizon-escape.hr</ElCol
       >
-      <ElCol class="company-info-text" align="center">Telefon: TODO</ElCol>
-      <ElCol class="company-info-text" align="center">Banka: TODO</ElCol>
-      <ElCol class="company-info-text" align="center">SWIFT/BIC: TODO</ElCol>
-      <ElCol class="company-info-text" align="center">IBAN: TODO</ElCol>
+      <ElCol class="company-info-text" align="center"
+        >Telefon: +385 99 7900 257</ElCol
+      >
+      <ElCol class="company-info-text" align="center"
+        >Banka: Privredna Banka Zagreb</ElCol
+      >
+      <ElCol class="company-info-text" align="center"
+        >SWIFT/BIC: PBZGHR2X</ElCol
+      >
+      <ElCol class="company-info-text" align="center"
+        >IBAN: HR9523400091111344203</ElCol
+      >
+    </ElRow>
+
+    <ElRow justify="center" align="middle" class="mt-24">
+      <div class="map-wrapper">
+        <iframe
+          width="100%"
+          height="350"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2865.092901149903!2d15.350661015515641!3d44.17121097910751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4761ff0d5e6afbd5%3A0x44c5981b2f0d1b3e!2sStara%20cesta%203%2C%2023241%20Poli%C4%8Dnik!5e0!3m2!1shr!2shr!4v1738948800000"
+        ></iframe>
+      </div>
     </ElRow>
   </div>
 </template>
@@ -220,6 +245,15 @@ p {
   font-weight: 300;
   letter-spacing: 0.75px;
   color: #737373;
+}
+.map-wrapper {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 800px;
+}
+iframe {
+  border: 0;
+  border-radius: 8px;
 }
 .on-image-text {
   margin-left: 8px;
