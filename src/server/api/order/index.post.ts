@@ -100,7 +100,7 @@ export default defineEventHandler(async event => {
                <b><p>Prodavač</p></b>
                <p>Agencija za Čišćenje Horizon d.o.o.</p>
                <p>Email: info@horizon-escape.hr</p>
-               <p>Mobitel: +385 99 7900 257</p>
+               <p>Mobitel: +385 91 6175 515</p>
                <p>Adresa: Baćina 2</p>
                <p>Mjesto: 51219 Čavle</p>
                <p>Država: Hrvatska</p>

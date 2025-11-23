@@ -158,7 +158,7 @@ useSeoMeta({
         >Email: info@horizon-escape.hr</ElCol
       >
       <ElCol class="company-info-text" align="center"
-        >Telefon: +385 99 7900 257</ElCol
+        >Telefon: +385 91 6175 515</ElCol
       >
       <ElCol class="company-info-text" align="center"
         >Banka: Privredna Banka Zagreb</ElCol

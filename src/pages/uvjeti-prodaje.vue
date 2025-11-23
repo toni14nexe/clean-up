@@ -115,7 +115,7 @@
           E-mail:
           <a href="mailto:info@horizon-escape.hr">info@horizon-escape.hr</a>
         </li>
-        <li>Telefon: +385 91 000 0000</li>
+        <li>Telefon: +385 91 6175 515</li>
       </ul>
     </ElRow>
   </div>

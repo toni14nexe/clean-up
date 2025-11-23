@@ -70,7 +70,7 @@ const mainCategories = ref([
         >Stara cesta 3, 23241 Poličnik</ElCol
       >
       <ElCol align="middle" class="small-text">OIB: 45285939281</ElCol>
-      <ElCol align="middle" class="small-text">Telefon: +385 99 7900 257</ElCol>
+      <ElCol align="middle" class="small-text">Telefon: +385 91 6175 515</ElCol>
       <ElCol align="middle" class="small-text"
         >Email:
         <a href="mailto:info@horizon-escape.hr"
