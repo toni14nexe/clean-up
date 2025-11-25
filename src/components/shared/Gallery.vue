@@ -16,15 +16,6 @@ const isFullscreen = ref(false)
 
 onMounted(() => {
   document.addEventListener('fullscreenchange', handleFullscreenChange)
-
-  props.links[2] = props.links[0]
-  props.links[3] = props.links[0]
-  props.links[4] = props.links[0]
-  props.links[5] = props.links[0]
-  props.links[6] = props.links[0]
-  props.links[7] = props.links[0]
-  props.links[8] = props.links[0]
-  props.links[9] = props.links[0]
 })
 
 onUnmounted(() => {
